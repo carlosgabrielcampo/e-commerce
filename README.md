@@ -1,2 +1,2 @@
-# e-commerce
-e-commerce de produtos caninos
+# Ecommerce
+Ecommerce de produtos caninos
