@@ -5,5 +5,11 @@ import { BrowserRouter } from 'react-router-dom';
 import Button from '../Components/Button';
 
 test('', () => {
-  render()
+  render(
+    <BrowserRouter>
+      <Button text="botao" />
+    </BrowserRouter>
+  )
+  const text = screen.getByText('botao')
+  expect(text).toBeInTheDocument()
 });

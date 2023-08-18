@@ -19,7 +19,7 @@ function Header({ carrinholength, filter, title }) {
           <Link className="carrinho-link" to="/carrinho">
             <div>
               {'Carrinho: '}
-              {carrinholength}
+              <div data-testid="carrinho_length">{carrinholength}</div>
             </div>
           </Link>
           )}

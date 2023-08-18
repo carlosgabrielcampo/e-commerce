@@ -5,11 +5,13 @@ import '../Styles/Produtos.css';
 import Header from '../Components/Header';
 
 function Produtos({ handleCarrinho, carrinho }) {
+
   const [produtos, setProdutos] = useState(mock);
   const [carrinholength, setCarrinhoLength] = useState(0);
   useEffect(() => {
     setCarrinhoLength(carrinho.length);
   }, [carrinho.length]);
+  
   const filter = (
     <label htmlFor="page-filter">
       <input
@@ -25,10 +27,8 @@ function Produtos({ handleCarrinho, carrinho }) {
     <div>
       <Header filter={filter} carrinholength={carrinholength} />
       <h1>Nossos Produtos</h1>
-      <div className="listaProdutos">
         {
             produtos.map((e) => (
-              <div>
                 <div
                   tabIndex="0"
                   role="button"
@@ -37,16 +37,15 @@ function Produtos({ handleCarrinho, carrinho }) {
                   }}
                   className="cardProduto"
                   onClick={() => handleCarrinho(e)}
+                  data-testid="produtos"
                 >
-                  <img alt={e.description} src={e.images} />
+                  <img  alt={e.description} src={e.images} />
                   <p>{e.name}</p>
                   <p>{e.price}</p>
                 </div>
-              </div>
             ))
           }
       </div>
-    </div>
   );
 }
 export default Produtos;
